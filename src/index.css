@@ -1,0 +1,65 @@
+/* 🔴 OBLIGATORIO EN TAILWIND v4 */
+@reference "tailwindcss";
+
+/* =====================
+   FUENTE
+   ===================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@reference "tailwindcss";
+@import "./tailwind.safe.css";
+
+/* =====================
+   TAILWIND
+   ===================== */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =====================
+   BASE GLOBAL (SIN @apply)
+   ===================== */
+html {
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: #f9fafb; /* gray-50 */
+  color: #111827;           /* gray-900 */
+  min-height: 100vh;
+}
+
+/* =====================
+   COMPONENTS (AQUÍ SÍ @apply)
+   ===================== */
+@layer components {
+  .card {
+    @apply bg-white border rounded-lg p-6 shadow-sm;
+    border-color: #e5e7eb; /* gray-200 */
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2
+           rounded-md font-medium transition;
+  }
+
+  .btn-primary {
+    background-color: #2563eb;
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background-color: #1d4ed8;
+  }
+
+  .input {
+    @apply w-full px-3 py-2 rounded-md;
+    border: 1px solid #d1d5db;
+  }
+
+  .input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgb(37 99 235 / 30%);
+  }
+}
